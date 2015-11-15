@@ -1,8 +1,6 @@
 
 exports.forLib = function (LIB) {
 
-    const TWILIO = require("twilio");
-
     var exports = {};
 
     exports.spin = function (context) {
@@ -21,6 +19,8 @@ exports.forLib = function (LIB) {
 
     				LIB.assert(typeof context.config.twilio.credentials.accountSid, "string");
     				LIB.assert(typeof context.config.twilio.credentials.authToken, "string");
+
+                    const TWILIO = require("twilio");
 
     				var client = TWILIO(context.config.twilio.credentials.accountSid, context.config.twilio.credentials.authToken);
 
